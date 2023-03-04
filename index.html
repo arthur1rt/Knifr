@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="pt">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Knifr</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="CuttinTool" class="mx-auto text-center">
+        <div id="Content" class="mx-auto">
+
+            <h1 style="color:white;">Knifr</h1>
+
+            <br>
+
+            <div id="BattleInfo" class="row g-3 mx-auto">
+                <div class="col-lg-12 col-xl-4">
+                    <select id="AllBattleNames" class="form-select form-select mb-3">
+                        <option value="-1" selected hidden>xxxxxxxxxx xx xxxxxxxx</option>
+                        <!-- <option value="1">Batalha da Aldeia</option> -->
+                    </select>
+                </div>
+                <div class="col-lg-6 col-xl-2">
+                    <div class="input-group input-group mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-lg">#</span>
+                        <input type="text" class="form-control" placeholder="###" id="EditionNumber">
+                    </div>
+                </div>
+                <div class="col-lg-2 col-xl-2">
+                    <select id="BattleDay" class="form-select form-select mb-3">
+                        <option value="-1" selected hidden>Dia</option>
+                    </select>
+                </div>
+                <div class="col-lg-2 col-xl-2">
+                    <select id="BattleMonth" class="form-select form-select mb-3">
+                        <option value="-1" selected hidden>Mês</option>
+                    </select>
+                </div>
+                <div class="col-lg-2 col-xl-2">
+                    <select id="BattleYear" class="form-select form-select mb-3">
+                        <option value="-1" selected hidden>Ano</option>
+                    </select>
+                </div>
+            </div>
+
+
+            <br>
+
+            <div id="AllVideosFromBattle">
+
+            </div>
+
+            <!-- <div class="d-flex justify-content-start"> -->
+            <button class="btn btn-primary" type="button" id="AddBattle">Adicionar Batalha</button>
+            <!-- </div> -->
+
+
+        </div>
+    </div>
+
+    <div style="width: 87.5%;" class="d-flex justify-content-end">
+        <button style="width: 20%;" type="button" class="btn btn-success my-4" data-bs-toggle="modal"
+            data-bs-target="#DownloadModal" onclick="exportAllData()">Download
+            Data</button>
+    </div>
+
+
+
+
+    <!-- ALL OF THESE ARE HIDDEN :) -->
+
+
+    <!-- NEW BATTLE -->
+    <div id="NewBattle" style="display:none;" class="mb-5 py-3">
+        <div id="BattleContent" class="mx-auto">
+
+            <a class="btn btn-primary m-0" data-bs-toggle="collapse" id="collapseButton" href="#collapsedBattleId"
+                role="button" style="width: 100%; font-size: 22px; font-weight: bold;">
+                Battle #1
+            </a>
+            <div class="collapse show collapsedContent" id="collapsedBattleId">
+
+                <input id="YoutubeLink" class="form-control mx-auto mt-4" type="text" placeholder="YouTube Link">
+
+
+                <!-- ADD MCS -->
+                <div id="McsInBattleBg" class="mt-4 pb-3 mx-auto">
+                    <h3>Mcs Batalhando</h3>
+                    <div id="McsInBattle" class="mt-3">
+
+                    </div>
+
+                    <div class="autocomplete mt-2" style="min-width:100px; width:50%;">
+                        <input class=" form-control form-control-sm text-center" id="McNamesInput" type="text"
+                            name="mcName" placeholder="Nome do MC">
+                    </div>
+                    <button type="button" class="btn btn-primary btn-sm" id="AddMc">Adicionar</button>
+
+                </div>
+
+                <!-- ADD VIDEO CUTS -->
+                <div id="VideoCutsBg" class="mt-3 pb-3 mx-auto">
+                    <h3>Todos os Cortes</h3>
+                    <div id="AllVideoCuts" class="">
+
+                    </div>
+
+                    <button type="button" class="btn btn-primary mt-3" id="AddCut">Adicionar Corte</button>
+
+                </div>
+
+                <button type="button" class="btn btn-danger btn-sm mt-4 " id="DeleteBattle"
+                    style="width: 20%; min-width: 100px;" data-bs-toggle="modal" data-bs-target="#DeletionModal">Deletar
+                    Batalha</button>
+
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- NEW VIDEO CUT -->
+    <div id="VideoCut" style="display:none;" class="mb-3 mt-3 mx-auto">
+
+        <a class="btn btn-primary m-0" data-bs-toggle="collapse" id="collapseButton" href="#collapsedCutId"
+            role="button" style="width: 100%; font-size: 18px;">
+            Cut #1
+        </a>
+        <div class="collapse show collapsedContent" id="collapsedCutId">
+
+            <button type="button" class="btn btn-danger btn-sm mb-4 mt-2" id="DeleteCut"
+                style="width: 25%; min-width: 125px;" data-bs-toggle="modal" data-bs-target="#DeletionModal">Deletar
+                Corte</button>
+
+            <div class="row">
+                <div class="col">
+                    <!-- CUT TIMES -->
+                    <div class="d-flex align-items-center justify-content-center">
+                        <h4>Tempo do Corte</h4>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-center">
+                        <h5 class="m-0" style="min-width: 40px;">De:</h5>
+                        <div id="TimingsFrom" class="input-group mt-0 d-flex justify-content-center"
+                            style="width: auto;">
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-center mt-2">
+                        <h5 class="m-0" style="min-width: 40px;">Até:</h5>
+                        <div id="TimingsTo" class="input-group mt-0 d-flex justify-content-center" style="width: auto;">
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <!-- MCS HIGHLIGHT -->
+                    <div class="d-flex align-items-center justify-content-center">
+                        <h4>Mcs Destaque</h4>
+                    </div>
+                    <div id="McHighlightList" class="d-flex flex-wrap align-items-center justify-content-center">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="w-75 mt-3 mx-auto" style="border-top: 1px solid rgba(0, 0, 0, 0.2);"></div>
+                    <!-- ADD TAGS -->
+                    <div id="VideoCutTags" class="mt-3 pb-3 mx-auto">
+                        <h4>Tags do Corte</h4>
+
+                        <div id="CutTags" class="d-flex flex-wrap align-items-center justify-content-center">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- NEW MC NAME FOR TAGS -->
+    <div id="McNameTag" style="display:none;" class="mb-1 mx-1">
+        <input type="checkbox" class="btn-check" id="mc1" autocomplete="off">
+        <label class="btn btn-outline-primary" for="mc1">Mc Name</label><br>
+    </div>
+
+
+    <!-- NEW TAG NAME FOR TAGS -->
+    <div id="NameTag" style="display:none;" class="mb-1 mx-1">
+        <input type="checkbox" class="btn-check" id="mc1" autocomplete="off">
+        <label class="btn btn-outline-primary" for="mc1">Name Tag</label><br>
+    </div>
+
+
+    <!-- NEW MC NAME -->
+    <div id="McName" style="display:none;" class="mb-1">
+        <div class="input-group">
+            <div class="d-flex align-items-center"
+                style="width: 50%; background-color: white; border-radius: 5px 0px 0px 5px; text-align: center; margin-left: auto; height: 30px;">
+                <p id="McNameText" class="m-0 w-100">Nome</p>
+            </div>
+            <button class="btn btn-danger d-flex align-items-center" type="button" id="RemoveMcName"
+                style="margin-right: auto; height: 30px;">Remover</button>
+        </div>
+    </div>
+
+
+    <!-- DELETION CONFIRMATION MODAL -->
+    <div class="modal fade" id="DeletionModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5">Tem certeza?</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Tem certeza que deseja deletar isso?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-danger" onclick="deleteButtonAction()"
+                        data-bs-dismiss="modal">Deletar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- DOWNLOAD JSON MODAL -->
+    <div class="modal fade" id="DownloadModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5">Tem certeza?</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Voltar</button>
+                    <button type="button" class="btn btn-success" onclick="downloadJsonAction()" data-bs-dismiss="modal"
+                        id="DownloadBtn">Download</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="allBattleNames.js"></script>
+    <script src="allTagNames.js"></script>
+    <script src="allMcNames.js"></script>
+
+    <script src="dataValidation.js"></script>
+    <script src="dataExporter.js"></script>
+    <script src="autocompleteInput.js"></script>
+    <script src="script.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
