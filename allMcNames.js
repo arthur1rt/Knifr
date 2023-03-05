@@ -32,5 +32,17 @@ allMcNames = [
     "Baueb (SP)", 
     "Killua (SP)", 
     "Kant (SP)", 
-    "Jotapê (SP)"
+    "Jotapê (SP)", 
+    "Gine (RJ)", 
+    "Schuler (RJ)", 
+    "Mineiro (RJ)", 
+    "Dubaile (RS)", 
+    "Grafiteh (SP)", 
+    "MT (RJ)", 
+    "Lux D (RJ)", 
+    "Kroy (SP)", 
+    "Tavin (SP)", 
+    "Lili (SP)", 
+    "Lil Vi (SP)", 
+    "Noventa (ES)"
 ];
