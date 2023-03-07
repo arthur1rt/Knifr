@@ -7,9 +7,8 @@ allTagNames = [
     "Bate-Volta", 
     "Ideologia", 
     "Ataque", 
-    "Resposta", 
+    "Defesa", 
     "Flow", 
-    "Encaixou no Beat", 
     "Criativo", 
     "Técnica"
 ];
