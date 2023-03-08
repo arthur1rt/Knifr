@@ -41,9 +41,18 @@ function exportAllData() {
             var tagsSelected = []
             for (var k = 0; k < allTags.length; k++) {
                 if (allTags[k].querySelector("input").checked) {
-                    tagsSelected.push(allTagNames.indexOf(allTags[k].querySelector("label").innerHTML))
+                    const selectedTagName = allTags[k].querySelector("label").innerHTML;
+                    var selectedTagKey = "";
+                    for ([key, value] of Object.entries(allTagNames)) {
+                        if (value == selectedTagName) {
+                            selectedTagKey = key;
+                            break;
+                        }
+                    }
+                    tagsSelected.push(selectedTagKey);
                 }
             }
+
 
             var cutId = videoId + "_c" + getCutId(battle, cut, false);
             allCutsInfo[cutId] = {
@@ -82,10 +91,11 @@ function exportAllData() {
 }
 
 function getMcId(mcName) {
-    index = allMcNames.indexOf(mcName);
+    for ([key, value] of Object.entries(allMcNames)) {
+        if (value === mcName) {
+            return key
+        }
+    }
 
-    if (index >= 0)
-        return index
-
-    return mcName
+    return index
 }

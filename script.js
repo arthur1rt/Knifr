@@ -54,10 +54,9 @@ function addBattleButtonClicked() {
     addMcButton.addEventListener("click", function () {
 
         var name = namesInput.value;
-        for (var i = 0; i < allMcNames.length; i++) {
-            mcName = allMcNames[i];
-            if (matchMcNames(name, mcName)) {
-                name = mcName;
+        for (var [key, value] of Object.entries(allMcNames)) {
+            if (matchMcNames(name, value)) {
+                name = value;
                 break;
             }
         }
@@ -125,7 +124,11 @@ function addBattleButtonClicked() {
         }
     });
 
-    autocomplete(namesInput, mcsInBattle, allMcNames);
+    var mcsList = [];
+    for (var [key, value] of Object.entries(allMcNames)) {
+        mcsList.push(value);
+    }
+    autocomplete(namesInput, mcsInBattle, mcsList);
     refreshTagsFromBattle(newBattle);
 }
 
@@ -135,15 +138,14 @@ function addTagsToCut(newBattle, newCut, cutTags) {
     var cutId = videoId + getCutId(newBattle, newCut);
 
     cutTags.innerHTML = "";
-    for (var i = 0; i < allTagNames.length; i++) {
-        var name = allTagNames[i];
+    for ([key, value] of Object.entries(allTagNames)) {
+        var name = value;
         var tagId = cutId + name;
         var newTag = createNameTag(name);
         newTag.querySelector("input").id = tagId;
         newTag.querySelector("label").setAttribute("for", tagId);
         cutTags.appendChild(newTag);
     }
-
 }
 
 function getVideoId(battle, includeUnderscore = true) {
@@ -392,10 +394,12 @@ var addBattleButton = document.getElementById("AddBattle");
 addBattleButton.addEventListener("click", addBattleButtonClicked);
 
 
-var allBattleNamesSelect = document.getElementById("AllBattleNames");
-for (var i = 0; i < allBattleNames.length; i++) {
-    var option = document.createElement("option");
-    option.setAttribute("value", i);
-    option.innerHTML = allBattleNames[i];
-    allBattleNamesSelect.appendChild(option);
+const allBattleNamesSelect = document.getElementById("AllBattleNames");
+console.log(allBattleNames)
+for ([key, value] of Object.entries(allBattleNames)) {
+    const option = document.createElement("option");
+    option.value = key;
+    option.textContent = value;
+    allBattleNamesSelect.add(option);
 }
+

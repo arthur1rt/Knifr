@@ -160,7 +160,7 @@ function validateVideoMcs(dataJson) {
 
         for (var i in mcs) {
             var hasOnlyIntegers = /^[+-]?\d+$/.test(mcs[i])
-            var foundName = hasOnlyIntegers && parseInt(mcs[i]) < allMcNames.length;
+            var foundName = hasOnlyIntegers && parseInt(mcs[i]) < allMcNames.size;
             if (!foundName) {
                 validationWarnings.push("Batalha #" + video.substring(1) + " - Mc \"" + mcs[i] + "\" não está presente na lista de mcs reconhecidos pelo sistema. Caso seja um Mc novo, ignore esse aviso.");
             }
@@ -172,7 +172,7 @@ function validateVideoMcs(dataJson) {
 
 function validateBattleInfo(dataJson) {
     var nameId = dataJson['battleInfo']['nameId']
-    if (containsOnlyNumbers(nameId) == false || parseInt(nameId) < 0 || allBattleNames[nameId] == null) {
+    if (containsOnlyNumbers(nameId) == false || parseInt(nameId) < 0 || allBattleNames.hasOwnProperty(nameId) == false) {
         validationErrors.push("Batalha não selecionada.");
     }
 
