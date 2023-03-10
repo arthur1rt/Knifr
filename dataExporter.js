@@ -97,5 +97,5 @@ function getMcId(mcName) {
         }
     }
 
-    return index
+    return mcName
 }
