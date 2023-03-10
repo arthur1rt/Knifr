@@ -44,5 +44,8 @@ allMcNames = {
     "41": "Tavin (SP)", 
     "42": "Lili (SP)", 
     "43": "Lil Vi (SP)", 
-    "44": "Noventa (ES)"
+    "44": "Noventa (ES)", 
+    "45": "Dherik (SP)", 
+    "46": "Apollo (SP)", 
+    "47": "Barreto (SP)"
 };
