@@ -47,5 +47,14 @@ allMcNames = {
     "44": "Noventa (ES)", 
     "45": "Dherik (SP)", 
     "46": "Apollo (SP)", 
-    "47": "Barreto (SP)"
+    "47": "Barreto (SP)", 
+    "48": "ASP (RJ)", 
+    "49": "Yori DS (RJ)", 
+    "50": "Moita Treta (SP)", 
+    "51": "Devilzinha (RJ)", 
+    "52": "Alê (RJ)", 
+    "53": "Moita Treta (RJ)", 
+    "54": "Dandinho (SP)", 
+    "55": "NLE Dopre (SP)", 
+    "56": "Vitu (PE)"
 };
