@@ -56,5 +56,9 @@ allMcNames = {
     "53": "Moita Treta (RJ)", 
     "54": "Dandinho (SP)", 
     "55": "NLE Dopre (SP)", 
-    "56": "Vitu (PE)"
+    "56": "Vitu (PE)", 
+    "57": "Thiago (SP)", 
+    "58": "Chris (SP)", 
+    "59": "Vinny (SP)", 
+    "60": "Winnit (SP)"
 };
