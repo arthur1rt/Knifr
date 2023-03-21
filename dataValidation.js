@@ -160,7 +160,7 @@ function validateVideoMcs(dataJson) {
 
         for (var i in mcs) {
             var hasOnlyIntegers = /^[+-]?\d+$/.test(mcs[i])
-            var foundName = hasOnlyIntegers && parseInt(mcs[i]) < allMcNames.size;
+            var foundName = hasOnlyIntegers && allMcNames.hasOwnProperty(mcs[i]);
             if (!foundName) {
                 validationWarnings.push("Batalha #" + video.substring(1) + " - Mc \"" + mcs[i] + "\" não está presente na lista de mcs reconhecidos pelo sistema. Caso seja um Mc novo, ignore esse aviso.");
             }
@@ -185,7 +185,7 @@ function validateBattleInfo(dataJson) {
 
     var edition = dataJson['battleInfo']['edition']
     if (containsOnlyNumbers(edition) == false) {
-        validationErrors.push("Edição da batalha não é um número: " + edition + ".");
+        validationWarnings.push("Edição da batalha não é um número: " + edition + ".");
     }
 }
 
