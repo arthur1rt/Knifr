@@ -60,5 +60,8 @@ allMcNames = {
     "57": "Thiago (SP)", 
     "58": "Chris (SP)", 
     "59": "Vinny (SP)", 
-    "60": "Winnit (SP)"
+    "60": "Winnit (SP)", 
+    "61": "Zed (RJ)", 
+    "62": "GB7 (RJ)", 
+    "63": "Toug (RJ)"
 };
