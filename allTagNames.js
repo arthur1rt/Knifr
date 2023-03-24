@@ -11,5 +11,6 @@ allTagNames = {
     "8": "Flow", 
     "9": "Criativo", 
     "10": "Técnica", 
-    "12": "Vibe Monstra"
+    "12": "Vibe Monstra", 
+    "13": "Speedflow"
 };
