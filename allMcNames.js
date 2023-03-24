@@ -67,5 +67,6 @@ allMcNames = {
     "64": "Black Panther (SP)", 
     "65": "Durap (SP)", 
     "66": "Forfe (SP)", 
-    "67": "Sodré (SP)"
+    "67": "Sodré (SP)", 
+    "68": "Pivete (RJ)"
 };
