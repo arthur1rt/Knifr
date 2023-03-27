@@ -55,7 +55,7 @@ allMcNames = {
     "52": "Alê (RJ)", 
     "53": "Moita Treta (RJ)", 
     "54": "Dandinho (SP)", 
-    "55": "NLE Dopre (SP)", 
+    "55": "Dopre (SP)", 
     "56": "Vitu (PE)", 
     "57": "Thiago (SP)", 
     "58": "Chris (SP)", 
@@ -68,5 +68,16 @@ allMcNames = {
     "65": "Durap (SP)", 
     "66": "Forfe (SP)", 
     "67": "Sodré (SP)", 
-    "68": "Pivete (RJ)"
+    "68": "Pivete (RJ)", 
+    "69": "Renan (SP)", 
+    "70": "Bolt (SP)", 
+    "71": "Nisque (SP)", 
+    "72": "Gomes (DF)", 
+    "73": "WM (SP)", 
+    "74": "Atlas (SP)", 
+    "75": "Neiff (DF)", 
+    "76": "Cristal (DF)", 
+    "77": "Levi (DF)", 
+    "78": "Frankstain (DF)", 
+    "79": "Slender (DF)"
 };
