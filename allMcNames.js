@@ -79,5 +79,11 @@ allMcNames = {
     "76": "Cristal (DF)", 
     "77": "Levi (DF)", 
     "78": "Frankstain (DF)", 
-    "79": "Slender (DF)"
+    "79": "Slender (DF)", 
+    "80": "Vinicius ZN (PE)", 
+    "81": "MCharles (CE)", 
+    "82": "Krawk (SP)", 
+    "83": "Ban (SP)", 
+    "84": "Billy (SP)", 
+    "85": "Kairos (SP)"
 };
