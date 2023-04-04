@@ -88,5 +88,7 @@ allMcNames = {
     "85": "Kairos (SP)", 
     "86": "Lorran (MG)", 
     "87": "Ajota (SP)", 
-    "88": "Riquelme (SP)"
+    "88": "Riquelme (SP)", 
+    "89": "Gabflow (RJ)", 
+    "90": "Seth (RJ)"
 };
