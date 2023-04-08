@@ -90,5 +90,9 @@ allMcNames = {
     "87": "Ajota (SP)", 
     "88": "Riquelme (SP)", 
     "89": "Gabflow (RJ)", 
-    "90": "Seth (RJ)"
+    "90": "Seth (RJ)", 
+    "91": "Kaal (RJ)", 
+    "92": "Terrestre (RJ)", 
+    "93": "Faro (RJ)", 
+    "94": "Snormax (SP)"
 };
