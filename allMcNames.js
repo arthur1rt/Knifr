@@ -94,5 +94,7 @@ allMcNames = {
     "91": "Kaal (RJ)", 
     "92": "Terrestre (RJ)", 
     "93": "Faro (RJ)", 
-    "94": "Snormax (SP)"
+    "94": "Snormax (SP)", 
+    "95": "MK (SP)", 
+    "96": "Novac (RJ)"
 };
