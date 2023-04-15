@@ -99,5 +99,6 @@ allMcNames = {
     "96": "Novac (RJ)", 
     "97": "Tonhão (CE)", 
     "98": "Salvador (SP)", 
-    "99": "Havel (MT)"
+    "99": "Havel (MT)", 
+    "100": "Blackout (SP)"
 };
