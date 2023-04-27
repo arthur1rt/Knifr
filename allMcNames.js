@@ -100,5 +100,10 @@ allMcNames = {
     "97": "Tonhão (CE)", 
     "98": "Salvador (SP)", 
     "99": "Havel (MT)", 
-    "100": "Blackout (SP)"
+    "100": "Blackout (SP)", 
+    "101": "VL Chavo (SP)", 
+    "102": "Malagueta (RJ)", 
+    "103": "Braga BXD (RJ)", 
+    "104": "Perigo (RJ)", 
+    "105": "Colombiana (SP)"
 };

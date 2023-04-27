@@ -73,7 +73,7 @@ function validateAllData(dataJson) {
 
 
 function validateVideosLinks(dataJson) {
-    var youtubeRegex = /(https?:\/\/)?(www\.)?youtube\.com\/watch\?v=\w+/;
+    var youtubeRegex = /(https?:\/\/)?(www\.)?youtube\.com\//;
     var allVideos = dataJson['allVideos']
     if (Object.keys(allVideos).length == 0) {
         validationErrors.push("Não existem batalhas adicionadas.");
