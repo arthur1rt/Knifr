@@ -1,5 +1,3 @@
-// TODO -> Write test classes for JS code
-
 var cutsCount = 0;
 
 var deleteButtonAction = function () { }

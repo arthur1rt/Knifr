@@ -55,10 +55,9 @@ function validateAllData(dataJson) {
     if (validationErrors.length == 0) {
         addSection(modal, "[SUCCESS] Tudo certo para o Download! :)", "", "green", validationWarnings.length > 0)
 
+        // TODO => download file as "Battle_Name Battle_Edition" like "Batalha do Museu 135"
         downloadJsonAction = function () {
-            var options = { day: '2-digit', month: '2-digit', year: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' };
-            var name = new Date().toLocaleDateString('en-GB', options).replace(',', '-');
-            name = name.replace("_", ">>").replace(' ', '');
+            var name = allBattleNames[dataJson['battleInfo']['nameId']].substring(0, allBattleNames[dataJson['battleInfo']['nameId']].length - 4) + "- " + dataJson['battleInfo']['edition'];
             downloadJson(dataJson, name);
         }
     }
