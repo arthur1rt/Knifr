@@ -105,5 +105,13 @@ allMcNames = {
     "102": "Malagueta (RJ)", 
     "103": "Braga BXD (RJ)", 
     "104": "Perigo (RJ)", 
-    "105": "Colombiana (SP)"
+    "105": "Colombiana (SP)", 
+    "106": "Alice Gorete (AL)", 
+    "107": "Lukinha (GO)", 
+    "108": "Limão (BA)", 
+    "109": "Gregorio (SP)", 
+    "110": "Spratzz (SP)", 
+    "111": "Samurai (RJ)", 
+    "112": "Fael (RJ)", 
+    "113": "2ROCK (RJ)"
 };
