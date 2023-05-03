@@ -113,5 +113,10 @@ allMcNames = {
     "110": "Spratzz (SP)", 
     "111": "Samurai (RJ)", 
     "112": "Fael (RJ)", 
-    "113": "2ROCK (RJ)"
+    "113": "2ROCK (RJ)", 
+    "114": "Diogo (DF)", 
+    "115": "Kiflow (GO)", 
+    "116": "Netinho (DF)", 
+    "117": "Dellas (GO)", 
+    "118": "Kaemy (GO)"
 };
