@@ -55,7 +55,6 @@ function validateAllData(dataJson) {
     if (validationErrors.length == 0) {
         addSection(modal, "[SUCCESS] Tudo certo para o Download! :)", "", "green", validationWarnings.length > 0)
 
-        // TODO => download file as "Battle_Name Battle_Edition" like "Batalha do Museu 135"
         downloadJsonAction = function () {
             var name = allBattleNames[dataJson['battleInfo']['nameId']].substring(0, allBattleNames[dataJson['battleInfo']['nameId']].length - 4) + "- " + dataJson['battleInfo']['edition'];
             downloadJson(dataJson, name);
