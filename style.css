@@ -1,9 +1,14 @@
+body {
+    background-color: #141414;
+}
+
 #CuttinTool {
     margin-top: 100px;
     width: 75%;
     padding: 20px 20px 20px 20px;
-    background-color: #1c1c1c;
+    background-color: #212121;
     border-radius: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.376);
 }
 
 #CuttinTool #Content {
@@ -27,7 +32,7 @@
 }
 
 #NewBattle {
-    border: 2px solid rgba(255, 255, 255, 0.486);
+    border: 1px solid rgba(255, 255, 255, 0.321);
     border-radius: 5px;
 }
 
