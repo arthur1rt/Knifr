@@ -118,5 +118,13 @@ allMcNames = {
     "115": "Kiflow (GO)", 
     "116": "Netinho (DF)", 
     "117": "Dellas (GO)", 
-    "118": "Kaemy (GO)"
+    "118": "Kaemy (GO)", 
+    "119": "Gordão ZN (RJ)", 
+    "120": "Torvi (RJ)", 
+    "121": "Salete (MA)", 
+    "122": "Spike (RJ)", 
+    "123": "Thorment (RJ)", 
+    "124": "Adrien (RJ)", 
+    "125": "Diportu (RJ)", 
+    "126": "Estudante (RJ)"
 };
