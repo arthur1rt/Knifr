@@ -126,5 +126,11 @@ allMcNames = {
     "123": "Thorment (RJ)", 
     "124": "Adrien (RJ)", 
     "125": "Diportu (RJ)", 
-    "126": "Estudante (RJ)"
+    "126": "Estudante (RJ)", 
+    "127": "Freelipe (SP)", 
+    "128": "RD (PA)", 
+    "129": "Peter Do Busão (ES)", 
+    "130": "GLR (SP)", 
+    "131": "Yoga (BA)", 
+    "132": "Alme (RJ)"
 };
