@@ -132,5 +132,8 @@ allMcNames = {
     "129": "Peter Do Busão (ES)", 
     "130": "GLR (SP)", 
     "131": "Yoga (BA)", 
-    "132": "Alme (RJ)"
+    "132": "Alme (RJ)", 
+    "133": "Hope (RJ)", 
+    "134": "Pedrin (ES)", 
+    "135": "Jump (RJ)"
 };
