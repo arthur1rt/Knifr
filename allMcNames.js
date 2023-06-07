@@ -135,5 +135,13 @@ allMcNames = {
     "132": "Alme (RJ)", 
     "133": "Hope (RJ)", 
     "134": "Pedrin (ES)", 
-    "135": "Jump (RJ)"
+    "135": "Jump (RJ)", 
+    "136": "FL (RJ)", 
+    "137": "Gregor (RJ)", 
+    "138": "Vinicius (RJ)", 
+    "139": "Lohan (RJ)", 
+    "140": "Exodia (RJ)", 
+    "141": "Kauan (RJ)", 
+    "142": "Brinquedo (SP)", 
+    "143": "Rafael (SP)"
 };
