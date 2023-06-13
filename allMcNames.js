@@ -143,5 +143,10 @@ allMcNames = {
     "140": "Exodia (RJ)", 
     "141": "Kauan (RJ)", 
     "142": "Brinquedo (SP)", 
-    "143": "Rafael (SP)"
+    "143": "Rafael (SP)", 
+    "144": "Mlk de Mel (SP)", 
+    "145": "Big Z (SP)", 
+    "146": "Vick Vi (SP)", 
+    "147": "RM Praga (RJ)", 
+    "148": "Aninha (SP)"
 };
