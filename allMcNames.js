@@ -148,5 +148,7 @@ allMcNames = {
     "145": "Big Z (SP)", 
     "146": "Vick Vi (SP)", 
     "147": "RM Praga (RJ)", 
-    "148": "Aninha (SP)"
+    "148": "Aninha (SP)", 
+    "149": "Juh Altão (RJ)", 
+    "150": "Zanini (SP)"
 };
