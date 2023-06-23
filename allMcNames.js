@@ -150,5 +150,8 @@ allMcNames = {
     "147": "RM Praga (RJ)", 
     "148": "Aninha (SP)", 
     "149": "Juh Altão (RJ)", 
-    "150": "Zanini (SP)"
+    "150": "Zanini (SP)", 
+    "151": "Azevedo (SP)", 
+    "152": "KPV (SP)", 
+    "153": "Nicão (SP)"
 };
