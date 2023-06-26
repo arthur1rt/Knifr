@@ -459,7 +459,6 @@ addBattleButton.addEventListener("click", addBattleButtonClicked);
 
 
 const allBattleNamesSelect = document.getElementById("AllBattleNames");
-console.log(allBattleNames)
 for ([key, value] of Object.entries(allBattleNames)) {
     const option = document.createElement("option");
     option.value = key;
