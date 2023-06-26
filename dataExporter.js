@@ -12,6 +12,20 @@ function exportAllData() {
         'year': document.getElementById("BattleYear").value
     }
 
+    function getTimeInSeconds(timeText) {
+        var parts = timeText.split(':').map(Number);  // split by ':' and convert each part to Number
+
+        var timeInSeconds;
+
+        if (parts.length === 4) {  // if time is in HH:MM:SS:mm format
+            // calculate total time in seconds
+            timeInSeconds = parts[0] * 3600 + parts[1] * 60 + parts[2] + parts[3] / 1000;
+        } else if (parts.length === 3) {  // if time is in MM:SS:mm format
+            timeInSeconds = parts[0] * 60 + parts[1] + parts[2] / 1000;
+        }
+        return timeInSeconds;
+    }
+
     // EVERY VIDEO INFO
     var allBattles = document.getElementById("AllVideosFromBattle").querySelectorAll("#NewBattle");
     var allBattlesInfo = {};
@@ -26,8 +40,11 @@ function exportAllData() {
         for (var j = 0; j < allVideoCuts.length; j++) {
             var cut = allVideoCuts[j];
 
-            var timeFrom = cut.querySelector("#TimingsFrom").querySelectorAll("select");
-            var timeTo = cut.querySelector("#TimingsTo").querySelectorAll("select");
+            var timeFrom = cut.querySelector("#TimeFrom").innerHTML;
+            var timeFromInSeconds = getTimeInSeconds(timeFrom);
+
+            var timeTo = cut.querySelector("#TimeTo").innerHTML;
+            var timeToInSeconds = getTimeInSeconds(timeTo);
 
             var allHighlights = cut.querySelector("#McHighlightList").querySelectorAll("#McNameTag");
             var highlightsSelected = []
@@ -58,12 +75,10 @@ function exportAllData() {
             allCutsInfo[cutId] = {
                 'keyframes': {
                     'from': {
-                        'min': timeFrom[0].value,
-                        'sec': timeFrom[1].value
+                        'sec': timeFromInSeconds
                     },
                     'to': {
-                        'min': timeTo[0].value,
-                        'sec': timeTo[1].value
+                        'sec': timeToInSeconds
                     }
                 },
                 'highlights': highlightsSelected,

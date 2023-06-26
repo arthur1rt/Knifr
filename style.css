@@ -17,9 +17,15 @@ body {
 
 #CuttinTool #YoutubeLink {
     text-align: center;
-    font-size: 18px;
-    height: 40px;
+    font-size: 14px;
+    height: 30px;
     width: 95%;
+}
+
+#CuttinTool #LoadVideoBtn {
+    font: 14px Arial;
+    width: 50%;
+    margin-top: 10px;
 }
 
 #CuttinTool #BattleContent {
@@ -49,6 +55,12 @@ body {
 }
 
 #McsInBattleBg {
+    width: 95%;
+    background-color: #818181;
+    border-radius: 5px;
+}
+
+#LoadVideo {
     width: 95%;
     background-color: #818181;
     border-radius: 5px;

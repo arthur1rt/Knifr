@@ -8,6 +8,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+
+    <script src="https://www.youtube.com/iframe_api"></script>
 </head>
 
 <body>
@@ -80,16 +82,13 @@
         <div id="BattleContent" class="mx-auto">
 
             <a class="btn btn-primary m-0" data-bs-toggle="collapse" id="collapseButton" href="#collapsedBattleId"
-                role="button" style="width: 100%; font-size: 22px; font-weight: bold;">
+                role="button" style="width: 100%; font-size: 20px; font-weight: bold;">
                 Battle #1
             </a>
             <div class="collapse show collapsedContent" id="collapsedBattleId">
 
-                <input id="YoutubeLink" class="form-control mx-auto mt-4" type="text" placeholder="YouTube Link">
-
-
                 <!-- ADD MCS -->
-                <div id="McsInBattleBg" class="mt-4 pb-3 mx-auto">
+                <div id="McsInBattleBg" class="mt-2 pb-3 mx-auto">
                     <h3>Mcs Batalhando</h3>
                     <div id="McsInBattle" class="mt-3">
 
@@ -100,11 +99,22 @@
                             name="mcName" placeholder="Nome do MC">
                     </div>
                     <button type="button" class="btn btn-primary btn-sm" id="AddMc">Adicionar</button>
-
                 </div>
 
+
+                <!-- Load Video -->
+                <div id="LoadVideo" class="mt-2 pb-3 mx-auto">
+                    <h3>Video Preview</h3>
+                    <input id="YoutubeLink" class="form-control mx-auto mt-2" type="text" placeholder="YouTube Link">
+                    <div id="VideoPlace" class="mt-2">
+
+                    </div>
+                    <button class="btn btn-warning mb-2 mt-2" type="button" id="LoadVideoBtn">Load Player</button>
+                </div>
+
+
                 <!-- ADD VIDEO CUTS -->
-                <div id="VideoCutsBg" class="mt-3 pb-3 mx-auto">
+                <div id="VideoCutsBg" class="mt-2 pb-3 mx-auto">
                     <h3>Todos os Cortes</h3>
                     <div id="AllVideoCuts" class="">
 
@@ -128,7 +138,7 @@
     <div id="VideoCut" style="display:none;" class="mb-3 mt-3 mx-auto">
 
         <a class="btn btn-primary m-0" data-bs-toggle="collapse" id="collapseButton" href="#collapsedCutId"
-            role="button" style="width: 100%; font-size: 18px;">
+            role="button" style="width: 100%; font-size: 14px;">
             Cut #1
         </a>
         <div class="collapse show collapsedContent" id="collapsedCutId">
@@ -144,6 +154,16 @@
                         <h4>Tempo do Corte</h4>
                     </div>
                     <div class="d-flex align-items-center justify-content-center">
+                        <button id="RegisterBegin" type="button" class="btn btn-warning btn-sm my-auto">Registrar
+                            Inicio</button>
+                        <h5 id="TimeFrom" class="m-0 mx-2" style="min-width: 40px;">00:00:00</h5>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-center mt-2">
+                        <button id="RegisterEnd" type="button" class="btn btn-warning btn-sm my-auto">Registrar
+                            Fim</button>
+                        <h5 id="TimeTo" class="m-0 mx-2" style="min-width: 40px;">00:00:00</h5>
+                    </div>
+                    <!-- <div class="d-flex align-items-center justify-content-center">
                         <h5 class="m-0" style="min-width: 40px;">De:</h5>
                         <div id="TimingsFrom" class="input-group mt-0 d-flex justify-content-center"
                             style="width: auto;">
@@ -153,7 +173,7 @@
                         <h5 class="m-0" style="min-width: 40px;">Até:</h5>
                         <div id="TimingsTo" class="input-group mt-0 d-flex justify-content-center" style="width: auto;">
                         </div>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="col">
                     <!-- MCS HIGHLIGHT -->
@@ -208,6 +228,8 @@
         </div>
     </div>
 
+    <div id="VideoPreview" style="display:none;" playsinline>
+    </div>
 
     <!-- DELETION CONFIRMATION MODAL -->
     <div class="modal fade" id="DeletionModal" tabindex="-1">

@@ -102,12 +102,11 @@ function validateCutsKeyframes(dataJson) {
                 var timeFrom = allVideos[video]['allCuts'][cut]['keyframes']['from']
                 var timeTo = allVideos[video]['allCuts'][cut]['keyframes']['to']
 
-                if (containsOnlyNumbers(timeFrom['min']) == false || containsOnlyNumbers(timeFrom['sec']) == false ||
-                    containsOnlyNumbers(timeTo['min']) == false || containsOnlyNumbers(timeTo['sec']) == false) {
+                if (containsOnlyNumbers(timeFrom['sec'], true) == false || containsOnlyNumbers(timeTo['sec'], true) == false) {
                     validationErrors.push("Batalha #" + video.substring(1) + " - Corte #" + cut.substring(4) + " - Tempos de corte inválidos.");
                 } else {
-                    var from = (parseInt(timeFrom['min']) * 60) + parseInt(timeFrom['sec'])
-                    var to = (parseInt(timeTo['min']) * 60) + parseInt(timeTo['sec'])
+                    var from = parseInt(timeFrom['sec'])
+                    var to = parseInt(timeTo['sec'])
                     allIntervals.push([from, to])
 
                     if (from >= to) {
@@ -187,9 +186,13 @@ function validateBattleInfo(dataJson) {
     }
 }
 
-function containsOnlyNumbers(str) {
+function containsOnlyNumbers(str, allowDecimal = false) {
+    if (allowDecimal)
+        return /^\d*\.?\d+$/.test(str);
+
     return /^\d+$/.test(str);
 }
+
 
 
 function findIntersectingIntervals(intervals) {

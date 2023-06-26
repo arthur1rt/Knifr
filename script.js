@@ -10,6 +10,17 @@ function removeBracketedSuffix(str) {
     return str;
 }
 
+let videoPlayer;
+function onYouTubeIframeAPIReady() {
+    // Note: This function must be in the global scope to be seen by the API
+    // You need a video ID, not the whole URL, so we'll have to extract that later
+    videoPlayer = new YT.Player('VideoPreview', {
+        height: '540',
+        width: '960',
+        videoId: '', // initially empty
+    });
+}
+
 // Define a mapping of accented characters to their unaccented equivalents
 const accentMap = {
     'á': 'a',
@@ -48,6 +59,39 @@ function addBattleButtonClicked() {
     allVideosDiv.appendChild(newBattle);
 
 
+    var videoPlace = newBattle.querySelector("#VideoPlace");
+    var loadVideoButton = newBattle.querySelector("#LoadVideoBtn");
+    loadVideoButton.addEventListener('click', function () {
+        let link = newBattle.querySelector('#YoutubeLink').value;
+        let videoId = link.split('v=')[1]; // splits the URL by the 'v=' string and gets the second item (the ID)
+        let ampersandPosition = videoId.indexOf('&');
+        if (ampersandPosition !== -1) {
+            videoId = videoId.substring(0, ampersandPosition);
+        }
+
+        function setButtonStyle(button, text, btnType) {
+            if (button == null) return;
+            button.innerHTML = text;
+            button.className = "btn " + btnType + " mb-2 mt-2";
+        }
+
+        // Now load the video into the player
+        var videoPreview = getStoredObject("VideoPreview");
+        if (videoPreview.parentNode != videoPlace) {
+            // reset previous button
+            var otherButton = videoPreview.parentNode.parentNode.querySelector("#LoadVideoBtn")
+            setButtonStyle(otherButton, "Load Player", "btn-warning")
+
+            // set new button
+            setButtonStyle(loadVideoButton, "Load Video", "btn-primary")
+            videoPreview.style.display = "inline";
+            videoPlace.appendChild(videoPreview);
+        } else {
+            videoPlayer.loadVideoById(videoId);
+        }
+    });
+
+
     var addMcButton = newBattle.querySelector("#AddMc");
     var namesInput = newBattle.querySelector("#McNamesInput");
     var mcsInBattle = newBattle.querySelector("#McsInBattle");
@@ -75,21 +119,41 @@ function addBattleButtonClicked() {
         var newCut = videoCut.cloneNode(true);
         newCut.style.display = "block";
 
-        var timingsFrom = newCut.querySelector("#TimingsFrom");
-        if (timingsFrom.childNodes.length == 1) {
-            var minutesTimes = createNumberDropdown(60, "min");
-            var secondsTimes = createNumberDropdown(60, "sec");
-            timingsFrom.appendChild(minutesTimes);
-            timingsFrom.appendChild(secondsTimes);
+        function ReadTime(button, text) {
+            button.addEventListener('click', function () {
+                var currentTime = videoPlayer.getCurrentTime();
+
+                var hours = Math.floor(currentTime / 3600);
+                var minutes = Math.floor((currentTime - (hours * 3600)) / 60);
+                var seconds = Math.floor(currentTime - (hours * 3600) - (minutes * 60));
+                var milliseconds = Math.round(((currentTime % 1) * 1000));
+
+                if (minutes < 10) { minutes = "0" + minutes; }
+                if (seconds < 10) { seconds = "0" + seconds; }
+                if (milliseconds < 10) { milliseconds = "0" + milliseconds; }
+
+                var formattedTime = '';
+
+                // append hours only if greater than 0
+                if (hours > 0) {
+                    if (hours < 10) { hours = "0" + hours; }
+                    formattedTime = hours + ':';
+                }
+
+                formattedTime += minutes + ':' + seconds + ':' + milliseconds;
+
+                text.innerHTML = formattedTime;
+            });
         }
 
-        var timingsTo = newCut.querySelector("#TimingsTo");
-        if (timingsTo.childNodes.length == 1) {
-            minutesTimes = createNumberDropdown(60, "min");
-            secondsTimes = createNumberDropdown(60, "sec");
-            timingsTo.appendChild(minutesTimes);
-            timingsTo.appendChild(secondsTimes);
-        }
+
+        var registerBegin = newCut.querySelector("#RegisterBegin");
+        var timeFrom = newCut.querySelector("#TimeFrom");
+        ReadTime(registerBegin, timeFrom);
+
+        var registerEnd = newCut.querySelector("#RegisterEnd");
+        var timeFrom = newCut.querySelector("#TimeTo");
+        ReadTime(registerEnd, timeFrom);
 
         // this adds the cut as child of AllVideoCuts 
         // some stuff needs to happen only after this
