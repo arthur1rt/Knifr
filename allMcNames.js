@@ -153,5 +153,9 @@ allMcNames = {
     "150": "Zanini (SP)", 
     "151": "Azevedo (SP)", 
     "152": "KPV (SP)", 
-    "153": "Nicão (SP)"
+    "153": "Nicão (SP)", 
+    "154": "K3 (RJ)", 
+    "155": "Nicolly (SP)", 
+    "156": "Triz (SP)", 
+    "157": "Nauí (DF)"
 };
