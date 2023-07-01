@@ -454,5 +454,3 @@ for ([key, value] of Object.entries(allBattleNames)) {
     option.textContent = value;
     allBattleNamesSelect.add(option);
 }
-
-console.log(videoPlayer);
