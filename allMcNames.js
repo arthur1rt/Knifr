@@ -157,5 +157,7 @@ allMcNames = {
     "154": "K3 (RJ)", 
     "155": "Nicolly (SP)", 
     "156": "Triz (SP)", 
-    "157": "Nauí (DF)"
+    "157": "Nauí (DF)", 
+    "158": "Ryu (SP)", 
+    "159": "Marionete (SP)"
 };
