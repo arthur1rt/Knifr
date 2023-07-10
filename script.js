@@ -447,10 +447,10 @@ var addBattleButton = document.getElementById("AddBattle");
 addBattleButton.addEventListener("click", addBattleButtonClicked);
 
 
-const allBattleNamesSelect = document.getElementById("AllBattleNames");
+var allBattleNamesSelect = document.getElementById("AllBattleNames");
 for ([key, value] of Object.entries(allBattleNames)) {
-    const option = document.createElement("option");
-    option.value = key;
-    option.textContent = value;
-    allBattleNamesSelect.add(option);
+    var option = document.createElement("option");
+    option.value = value;
+    // option.textContent = value;
+    allBattleNamesSelect.appendChild(option);
 }

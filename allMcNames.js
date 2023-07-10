@@ -159,5 +159,10 @@ allMcNames = {
     "156": "Triz (SP)", 
     "157": "Nauí (DF)", 
     "158": "Ryu (SP)", 
-    "159": "Marionete (SP)"
+    "159": "Marionete (SP)", 
+    "160": "Leal (RJ)", 
+    "161": "KSD (SP)", 
+    "162": "Mati (RJ)", 
+    "163": "Pekenina (RJ)", 
+    "164": "Fampa (RJ)"
 };

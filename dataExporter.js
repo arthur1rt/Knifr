@@ -5,7 +5,7 @@ function exportAllData() {
 
     // BATTLE INFO
     dataJson['battleInfo'] = {
-        'nameId': document.getElementById("AllBattleNames").value,
+        'name': document.getElementById("BattleName").value,
         'edition': document.getElementById("EditionNumber").value.trim(),
         'day': document.getElementById("BattleDay").value,
         'month': document.getElementById("BattleMonth").value,

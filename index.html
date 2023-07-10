@@ -29,10 +29,12 @@
 
             <div id="BattleInfo" class="row g-3 mx-auto">
                 <div class="col-lg-12 col-xl-4">
-                    <select id="AllBattleNames" class="form-select form-select mb-3">
-                        <option value="-1" selected hidden>xxxxxxxxxx xx xxxxxxxx</option>
-                        <!-- <option value="1">Batalha da Aldeia</option> -->
-                    </select>
+                    <div class="input-group">
+                        <input type="text" class="form-control" list="AllBattleNames" id="BattleName">
+                        <datalist id="AllBattleNames">
+                            <!-- Add your options here -->
+                        </datalist>
+                    </div>
                 </div>
                 <div class="col-lg-6 col-xl-2">
                     <div class="input-group input-group mb-3">

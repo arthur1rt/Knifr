@@ -56,7 +56,7 @@ function validateAllData(dataJson) {
         addSection(modal, "[SUCCESS] Tudo certo para o Download! :)", "", "green", validationWarnings.length > 0)
 
         downloadJsonAction = function () {
-            var name = allBattleNames[dataJson['battleInfo']['nameId']].substring(0, allBattleNames[dataJson['battleInfo']['nameId']].length - 4) + "- " + dataJson['battleInfo']['edition'];
+            var name = dataJson['battleInfo']['name'].substring(0, dataJson['battleInfo']['name'].length - 4) + "- " + dataJson['battleInfo']['edition'];
             downloadJson(dataJson, name);
         }
     }
@@ -168,9 +168,20 @@ function validateVideoMcs(dataJson) {
 
 
 function validateBattleInfo(dataJson) {
-    var nameId = dataJson['battleInfo']['nameId']
-    if (containsOnlyNumbers(nameId) == false || parseInt(nameId) < 0 || allBattleNames.hasOwnProperty(nameId) == false) {
-        validationErrors.push("Batalha não selecionada.");
+    var name = dataJson['battleInfo']['name']
+    var foundName = false;
+    for (var key in allBattleNames) {
+        if (allBattleNames.hasOwnProperty(key)) {
+            var value = allBattleNames[key];
+            if (value.toLowerCase() == name.toLowerCase()) {
+                dataJson['battleInfo']['name'] = value;
+                foundName = true;
+                break;
+            }
+        }
+    }
+    if (!foundName) {
+        validationWarnings.push("'" + name + "' não existe na lista de batalhas.");
     }
 
     var day = dataJson['battleInfo']['day']
@@ -222,7 +233,7 @@ function findIntersectingIntervals(intervals) {
 
 
 function downloadJson(json, filename) {
-    var jsonString = switchCharsToCharCode(JSON.stringify(json));
+    var jsonString = JSON.stringify(json);
     var jsonBlob = new Blob([jsonString], { type: "application/json" });
     var jsonUrl = URL.createObjectURL(jsonBlob);
     var link = document.createElement("a");
@@ -231,14 +242,3 @@ function downloadJson(json, filename) {
     link.click();
 }
 
-
-function switchCharsToCharCode(str) {
-    let charCodes = '';
-
-    for (let i = 0; i < str.length; i++) {
-        let charCode = str.charCodeAt(i);
-        charCodes += charCode + ',';
-    }
-
-    return charCodes.slice(0, -1);
-}
