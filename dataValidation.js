@@ -56,7 +56,8 @@ function validateAllData(dataJson) {
         addSection(modal, "[SUCCESS] Tudo certo para o Download! :)", "", "green", validationWarnings.length > 0)
 
         downloadJsonAction = function () {
-            var name = dataJson['battleInfo']['name'].substring(0, dataJson['battleInfo']['name'].length - 4) + "- " + dataJson['battleInfo']['edition'];
+            var battleName = document.getElementById("BattleName").value;
+            var name = battleName.substring(0, battleName.length - 4) + "- " + dataJson['battleInfo']['edition'];
             downloadJson(dataJson, name);
         }
     }
@@ -168,13 +169,13 @@ function validateVideoMcs(dataJson) {
 
 
 function validateBattleInfo(dataJson) {
-    var name = dataJson['battleInfo']['name']
+    var name = dataJson['battleInfo']['nameId']
     var foundName = false;
     for (var key in allBattleNames) {
         if (allBattleNames.hasOwnProperty(key)) {
             var value = allBattleNames[key];
             if (value.toLowerCase() == name.toLowerCase()) {
-                dataJson['battleInfo']['name'] = value;
+                dataJson['battleInfo']['nameId'] = value;
                 foundName = true;
                 break;
             }

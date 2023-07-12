@@ -5,7 +5,7 @@ function exportAllData() {
 
     // BATTLE INFO
     dataJson['battleInfo'] = {
-        'name': document.getElementById("BattleName").value,
+        'nameId': getBattleId(document.getElementById("BattleName").value),
         'edition': document.getElementById("EditionNumber").value.trim(),
         'day': document.getElementById("BattleDay").value,
         'month': document.getElementById("BattleMonth").value,
@@ -113,4 +113,14 @@ function getMcId(mcName) {
     }
 
     return mcName
+}
+
+function getBattleId(battleName) {
+    for ([key, value] of Object.entries(allBattleNames)) {
+        if (value === battleName) {
+            return key
+        }
+    }
+
+    return battleName
 }

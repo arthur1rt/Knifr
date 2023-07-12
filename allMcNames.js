@@ -164,5 +164,13 @@ allMcNames = {
     "161": "KSD (SP)", 
     "162": "Mati (RJ)", 
     "163": "Pekenina (RJ)", 
-    "164": "Fampa (RJ)"
+    "164": "Fampa (RJ)", 
+    "165": "TH (SP)", 
+    "166": "Jorgin (SP)", 
+    "167": "Nathan (SP)", 
+    "168": "Sallez (SP)", 
+    "169": "Maxito (SP)", 
+    "170": "EZ (SP)", 
+    "171": "TCA (SP)", 
+    "172": "Mytcho (PA)"
 };

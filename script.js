@@ -171,6 +171,9 @@ function addBattleButtonClicked() {
     var deleteBattle = newBattle.querySelector("#DeleteBattle");
     deleteBattle.addEventListener("click", function () {
         deleteButtonAction = function () {
+            var videoPreview = getStoredObject("VideoPreview");
+            document.body.appendChild(videoPreview);
+            videoPreview.style.display = "none";
             allVideosDiv.removeChild(newBattle);
             refreshTagsFromBattle(newBattle);
             deleteButtonAction = function () { };

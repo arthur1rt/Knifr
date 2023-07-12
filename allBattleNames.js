@@ -8,5 +8,6 @@ allBattleNames = {
     "4": "Batalha da Aldeia (SP)", 
     "7": "Batalha do Museu (DF)", 
     "9": "Batalha do Tanque (RJ)", 
-    "10": "Batalha da Helianto (RJ)"
+    "10": "Batalha da Helianto (RJ)", 
+    "12": "Duelo de MCs Nacional (BH)"
 };
