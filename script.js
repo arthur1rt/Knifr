@@ -438,7 +438,7 @@ function getStoredObject(id) {
 // fill out day month year
 fillNumbersDropdown(document.getElementById("BattleDay"), 1, 31, "Dia");
 fillNumbersDropdownWith(document.getElementById("BattleMonth"), ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"], "Mês");
-fillNumbersDropdown(document.getElementById("BattleYear"), 2014, 2030, "Ano");
+fillNumbersDropdown(document.getElementById("BattleYear"), 2006, 2030, "Ano");
 
 
 
